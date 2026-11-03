@@ -15,6 +15,16 @@ ExpenseFlow is a full-stack expense management application designed to help user
 - 📱 Responsive user interface
 - ⚡ Progressive Web App (PWA) support
 
+## 📸 Application Screenshots
+
+### Dashboard
+
+![ExpenseFlow Dashboard](screenshots/dashboard.png)
+
+### Recent Expenses
+
+![ExpenseFlow Recent Expenses](screenshots/expense.png)
+
 ## 🛠️ Tech Stack
 
 | Technology      | Purpose                        |
