@@ -1,41 +1,154 @@
-# ExpenseFlow — React Edition
+# 💸 ExpenseFlow
 
-Your original ExpenseFlow project has been upgraded to a React + Vite frontend. The Java Servlet, JDBC, MySQL schema, PWA manifest/service worker, and original assets are retained.
+### Smart Expense Tracking & Financial Management
 
-## Stack
-- HTML5, CSS3, JavaScript (ES modules)
-- React 18 + Vite
-- Chart.js + react-chartjs-2
-- Java Servlet + JDBC + MySQL (existing backend)
-- localStorage fallback when the backend is unavailable
+ExpenseFlow is a full-stack expense management application designed to help users record, manage, and monitor their daily expenses through a clean and responsive interface.
 
-## Run the React frontend
-1. Install Node.js (LTS).
-2. Open this folder in VS Code.
-3. Open the terminal in this folder and run:
+## 🚀 Features
 
-   ```bash
-   npm install
-   npm run dev
-   ```
+- 📊 Expense dashboard with summary cards
+- ➕ Add new expense records
+- 📋 View expense transaction history
+- 🗑️ Delete expense records
+- 📈 Visual expense analytics and charts
+- 💾 Persistent data storage using MySQL
+- 📱 Responsive user interface
+- ⚡ Progressive Web App (PWA) support
 
-4. Open the local URL printed by Vite (usually http://localhost:5173).
+## 🛠️ Tech Stack
 
-The app works in local browser-storage mode without Tomcat/MySQL. When the existing Java backend is running at `http://localhost:8080/ExpenseFlow`, Vite proxies `/ExpenseFlow` API requests to it.
+| Technology      | Purpose                        |
+| --------------- | ------------------------------ |
+| React.js        | Frontend                       |
+| JavaScript      | Application logic              |
+| HTML5 & CSS3    | UI and styling                 |
+| Java Servlets   | Backend                        |
+| JDBC            | Database connectivity          |
+| MySQL           | Database                       |
+| Apache Tomcat 9 | Application server             |
+| Vite            | Frontend development and build |
 
-## Run with the existing Java/MySQL backend
-- Keep the existing database and servlet configuration.
-- Start MySQL and Apache Tomcat, and deploy the Java web app at context path `/ExpenseFlow`.
-- Run the React app with `npm run dev`; it will call the existing `/ExpenseFlow/api/expenses` endpoint.
-- For a production deployment, run `npm run build` and deploy the generated `dist` frontend alongside/through your Tomcat setup. Ensure the app and servlet API paths share the `/ExpenseFlow` context path.
+## 🏗️ System Architecture
 
-## Important backend note
-The existing servlet contains database credentials directly in source. Do not publish real credentials in a public repository; move them to environment/configuration settings before production use.
+```text
+React Frontend
+      |
+      | Fetch API (HTTP)
+      v
+Apache Tomcat
+      |
+      v
+Java Servlet
+      |
+      v
+JDBC + MySQL Connector
+      |
+      v
+MySQL Database
+```
 
-## React concepts demonstrated
-- Components: `ExpenseForm`, `SummaryCard`, `ExpenseChart`, `ExpenseList`
-- Props: data and callbacks passed from `App`
-- State: `useState` for expenses, form fields, loading and search
-- Effects: `useEffect` for initial fetch and localStorage persistence
-- Derived data: `useMemo` for totals, chart data and filtered/grouped expenses
-- Events: controlled form inputs, submit, search and delete
+## 📂 Project Structure
+
+```text
+ExpenseFlow/
+│
+├── src/
+│   ├── components/
+│   │   ├── ExpenseChart.jsx
+│   │   ├── ExpenseForm.jsx
+│   │   ├── ExpenseList.jsx
+│   │   └── SummaryCard.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
+│
+├── WEB-INF/
+│   ├── classes/
+│   ├── lib/
+│   └── web.xml
+│
+├── database/
+│   └── expenseflow.sql
+│
+├── ExpenseServlet.java
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Karan-21-2004/ExpenseFlow.git
+cd ExpenseFlow
+```
+
+### 2. Install frontend dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure MySQL
+
+- Start your MySQL server.
+- Create the database using `database/expenseflow.sql`.
+- Configure the following environment variables:
+
+```text
+DB_URL=jdbc:mysql://localhost:3306/expenseflow_db
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+```
+
+Use your actual database name from the SQL script.
+
+### 4. Configure the backend
+
+- Configure Apache Tomcat 9.
+- Add the MySQL Connector/J library.
+- Compile and deploy the Java Servlet.
+- Configure the environment variables for the Tomcat process.
+
+### 5. Run the frontend
+
+```bash
+npm run dev
+```
+
+### 6. Build the frontend
+
+```bash
+npm run build
+```
+
+Deploy the generated frontend build with the Java Servlet application on Tomcat.
+
+## 🔐 Security
+
+Database credentials are read through environment variables rather than hardcoded in the Java source code.
+
+Never commit passwords, API keys, or private configuration files.
+
+## 🔮 Future Improvements
+
+- User authentication and authorization
+- Monthly and yearly expense reports
+- Budget planning and tracking
+- Export expense reports
+- Advanced financial analytics
+
+## 👨‍💻 Developer
+
+**Karan**
+
+B.Tech Computer Science & Engineering
+
+GitHub: [Karan-21-2004](https://github.com/Karan-21-2004)
+
+---
+
+⭐ If you find this project useful, consider giving it a star!
