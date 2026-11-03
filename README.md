@@ -19,11 +19,11 @@ ExpenseFlow is a full-stack expense management application designed to help user
 
 ### Dashboard
 
-![ExpenseFlow Dashboard](screenshots/dashboard.png)
+![ExpenseFlow Dashboard](./screenshots/dashboard.png)
 
 ### Recent Expenses
 
-![ExpenseFlow Recent Expenses](screenshots/expense.png)
+![ExpenseFlow Recent Expenses](./screenshots/expenses.png)
 
 ## 🛠️ Tech Stack
 
