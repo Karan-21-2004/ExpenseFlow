@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ExpenseServlet extends HttpServlet {
 
-    // Helper method to connect to your MySQL database (Uses your password Root@123)
     private Connection getConnection() throws Exception {
         String url = System.getenv("DB_URL");
         String user = System.getenv("DB_USER");
